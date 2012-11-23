@@ -1,2 +1,15 @@
-<h1>Staticpages#home</h1>
-<p>Find me in app/views/staticpages/home.html.erb</p>
+<div> HR App Home page </div>
+
+ 
+<div class="hero-unit">
+	
+	<% if user_signed_in? %> 	 
+		<div> <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></div>
+		<div> <%= current_user.company_id %></div>
+	
+		<% else %>
+		<div> <%= link_to "Sign Up", new_user_registration_path %> </div>
+	
+	<% end %>
+
+</div>

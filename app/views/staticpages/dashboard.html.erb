@@ -1,0 +1,39 @@
+<div class="row-fluid">
+	
+	<div class="span8">		
+		<div>
+			<h3> Jobs Currently in process </h3>
+			<div>
+				<% @joblistings.each do |show| %>
+					<div class= "job_title">
+						<b><%= link_to show.job_name, show %></b>
+						<p><%= show.stage %> | Closing Date: 18th November</p>
+					</div>
+					
+					<% JobSubmission.where( "joblisting_id = ?", show.id ).each do |listing| %>
+						<ul class="job_listing">
+							<li> <span class= "notice">Application</span>   <%= link_to "#{listing.first_name} #{listing.last_name}", listing %>  <span class="pull-right subtle-text"><%= listing.average_rating %> | <%= listing.status %></span> </li>
+						</ul>
+					<% end %>				
+
+				<% end %>
+			</div>
+			
+			<div class="bottom-box subtle-text">
+				Bottom level information - If joblistings is Nil you should put a whole guide thing there!
+				<p> Also, have it sort on this list, make it a dropdown for people to see 'rejected candidates'</p>
+				<p> Also, have dropdowns for each name, so hr can edit things on the dashboard </p>
+			</div>
+
+
+			</br>	
+			<%= link_to "Create a new job", new_joblisting_path, :class => "btn btn-primary btn-large"%>
+			
+			
+		</div>
+	</div>
+	
+	<div class="span4">
+
+	</div>
+</div>                                     

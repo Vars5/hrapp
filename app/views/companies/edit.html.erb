@@ -1,0 +1,13 @@
+<h1>Companies#edit</h1>
+<p>Find me in app/views/companies/edit.html.erb</p>
+
+<div class="joblisting">
+	<%= form_for @comapny do |f| %>
+		
+		<%= f.label :company_name %>
+		<%= f.text_field :company_name%>
+		
+		<%= f.submit %>
+		
+	<% end %>
+</div>

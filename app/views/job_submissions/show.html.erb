@@ -1,0 +1,35 @@
+<h1>JobSubmissions#show</h1>
+<p>Find me in app/views/job_submissions/show.html.erb</p>
+
+This page should show data
+
+<div>
+	<p><%= @job_submission.name %></p>
+	<p><%= @job_submission.email %></p>
+	<p><%= @job_submission.status %></p>
+	<p>Answer: <%= @job_submission.question1_answer %></p>
+</div>
+
+<%= render 'notes_form' %>
+
+<div class = "status_form">
+	<%= form_for @job_submission, :html => { :method => :put} do |f| %>
+		<%= f.select :status, [['To be reviewed'], ['Reviewed']] %>
+	<%= f.submit %>
+	<% end %>
+</div>
+
+<%= render 'criteria_form' %>
+
+<b> Average Rating: <%= @job_submission.average_rating %> </b>
+
+<div class="notes-feed">
+	This should show the notes related to the job submission
+	
+	<% @feed.each do |f| %>
+		<ul>
+			<li> <%= f.user_id  %>  <%= f.content %></li>
+		</ul>
+	<% end %>
+</div>
+

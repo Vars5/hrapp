@@ -1,0 +1,15 @@
+<div class="joblisting">
+	<%= form_for @joblisting do |f| %>
+		<%= f.label :job_name %>
+		<%= f.text_field :job_name %>
+
+		<%= f.label :question1 %>
+		<%= f.text_field :question1 %>
+		
+		<%= f.label :stage%>
+		<%= f.select :stage, [['Open'], ['Closed'], ['Draft']] %>
+	
+		<%= f.submit %>
+		
+	<% end %>
+</div>

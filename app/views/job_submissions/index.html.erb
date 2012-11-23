@@ -1,0 +1,10 @@
+<h1>JobSubmissions#index</h1>
+<p>Find me in app/views/job_submissions/index.html.erb</p>
+
+<p>This page should be an index of all the job_submissions: </p>
+
+<ul>
+	<% @all_job_submissions.each do |a| %>
+			<li><%= a.name %> <%= a.email %> <%= a.question1_answer %> <%= link_to "Page", a %></li>
+	<% end %>
+<ul>

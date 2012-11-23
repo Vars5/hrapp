@@ -1,0 +1,32 @@
+<h3>Create a new Job Position opening </h3>
+
+<div class="row-fluid">
+	<div class="span8">
+		<div class="joblisting">
+			<%= form_for @joblisting do |f| %>
+				<%= f.label "First, give the job a name" %>
+				<%= f.text_field :job_name %>
+
+				<legend> Optional Things </legend>
+				
+				<p></p>
+				<%= f.label "Help your job prospects know what they're applying for:" %>
+				<%= f.text_field :description %>
+
+				<%= f.label "If you are going to ask your prospects a question, what is it?" %>
+				<%= f.text_field :question1 %>
+		
+
+		
+				<%= f.hidden_field "stage",  :value => "Drafting" %>
+
+
+				</br>
+		
+				<%= f.submit %>
+		
+			<% end %>
+		</div>
+	</div>
+</div>
+   

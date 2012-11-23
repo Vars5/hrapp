@@ -1,0 +1,10 @@
+<div class = "notes_form"> 
+	<%= form_for(@note, :as => :note) do |f| %>
+		<%= f.hidden_field "job_submission_id", remote: true, :value => params[:id] %>
+		
+		<%= f.label :content %>
+		<%= f.text_field :content %>
+		
+		<%= f.submit %>
+	<% end %>
+</div>

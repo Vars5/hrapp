@@ -1,0 +1,43 @@
+<h3><%= @joblisting.job_name %></h3>
+
+Job Question: <%= @joblisting.question1 %>
+<p>Job Description: <%= @joblisting.description %></p>
+
+<h3> Company: <%= @company.company_name %></h3>
+
+<p>
+Params of the page <%= params[:id] %></p>
+
+</br></br></br>
+Here create submissions
+<div class="jobsubmission">
+	
+	<%= form_for(@job_submission, :as => :submission) do |f| %>
+		<%= f.hidden_field "joblisting_id", :value => (params[:id]) %>
+		<%= f.hidden_field "status", :value => "To be reviewed" %>
+	
+	
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %>
+
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %>
+		
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		
+		<%= f.label @joblisting.question1 %>
+		<%= f.text_field :question1_answer %>
+		
+		<%= f.submit %>
+		
+	<% end %>
+	
+	<% if signed_in? %>
+		<%= link_to "Edit the job listing", edit_joblisting_path %>
+	<% end %>
+	
+</div>
+
+<div>
+	Maybe on the side (for logged in HR) show joblisting stats, number of pageviews, number of applicants etc.

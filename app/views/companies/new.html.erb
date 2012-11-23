@@ -1,0 +1,16 @@
+<h1>Companies#new</h1>
+
+With Company Code
+<div class="with_company_code">
+	<%= form_for :teamcode, :url => { :action => 'assign_user_with_signup_code' }, :as => :teamcode do |f| %>
+		<%= f.label :signup_code %>
+		<%= f.text_field :signup_code %>
+		<%= f.submit %>
+	<% end %>
+</div>
+
+</br>	</br>
+New Company 
+<%= render 'companies/companies_form' %>
+
+</div>

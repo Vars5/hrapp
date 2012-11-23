@@ -1,9 +1,27 @@
 Hrapp::Application.routes.draw do
-  get "staticpages/home"
 
-  get "staticpages/about"
+  get "notes/show"
 
+  get "notes/edit"
+
+  root :to => 'staticpages#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
+  root :to => 'staticpages#home'
+
+  resources :companies
+  resources :joblistings
+  resources :job_submissions, :except => :new
+  resources :notes
+  resources :ratings
+  
+  
+
+  
   devise_for :users
+  
+  match '/assign_user_with_signup_code', :to => 'companies#assign_user_with_signup_code'  
+  match 'job_submissions_it', :to => 'job_submissions#create'
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
