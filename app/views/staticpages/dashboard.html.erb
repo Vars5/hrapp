@@ -12,10 +12,9 @@
 					
 					<% JobSubmission.where( "joblisting_id = ?", show.id ).each do |listing| %>
 						<ul class="job_listing">
-							<li> <span class= "notice">Application</span>   <%= link_to "#{listing.first_name} #{listing.last_name}", listing %>  <span class="pull-right subtle-text"><%= listing.average_rating %> | <%= listing.status %></span> </li>
+							<li> <span class="notice"><span class="dashboard-notice">Application</span></span>   <%= link_to "#{listing.first_name} #{listing.last_name}", listing %>  <span class="pull-right subtle-text"><%= listing.average_rating %> | <%= listing.status %></span> </li>
 						</ul>
 					<% end %>				
-
 				<% end %>
 			</div>
 			
@@ -27,6 +26,7 @@
 
 
 			</br>	
+			<h3> Create a new job listing </h3>
 			<%= link_to "Create a new job", new_joblisting_path, :class => "btn btn-primary btn-large"%>
 			
 			

@@ -1,3 +1,7 @@
+
+
+
+
 @import "bootstrap";
 
 
@@ -7,14 +11,19 @@ body {
 
 .top {
 	background-color:orange;
-	height:80px;
-	margin-bottom:15px;
+	height:60px;
+	margin-bottom:20px;
 }
 
 ul {
 	margin: 0px;
 	padding: 0px;
 	list-style-type:none;
+}
+
+p {
+	margin: 0px;
+	padding: 0px;
 }
 
 .boundary {
@@ -41,4 +50,14 @@ ul {
 	margin-top:10px;
 	padding:20px;
 	border:1px solid #999;
+}
+
+.notice {
+	background-color:#004a80;
+	color:#fff;
+}
+
+.dashboard-notice {
+	font-size:11px;
+	padding:2px 8px;
 }
